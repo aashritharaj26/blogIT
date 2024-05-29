@@ -8,7 +8,7 @@ const path=require('path')
 app.use(exp.static(path.join(__dirname,'../client/blogdb/build')))
 //join fe and be
 //connect to mongodb server
-mc.connect(MONGO_URL)
+mc.connect('mongodb+srv://aashritharaj26:hLI3F2ttXgwSnCnA@cluster0.po3bzyh.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
 //mc.connect(process.env.DB_URL)
 .then(client=>{
 const blogdb=client.db('blogdb')
