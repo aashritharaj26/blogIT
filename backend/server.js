@@ -8,8 +8,8 @@ const path=require('path')
 app.use(exp.static(path.join(__dirname,'../client/blogdb/build')))
 //join fe and be
 //connect to mongodb server
-//mc.connect('mongodb://localhost:27017')
-mc.connect(process.env.DB_URL)
+mc.connect(MONGO_URL)
+//mc.connect(process.env.DB_URL)
 .then(client=>{
 const blogdb=client.db('blogdb')
 const usercollection=blogdb.collection('usercollection')
