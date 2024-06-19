@@ -5,7 +5,7 @@ require('dotenv').config()   //process.env.PORT
 const mc=require('mongodb').MongoClient
 const path=require('path')
 //deploy react build in this server
-app.use(exp.static(path.join(__dirname,'../client/blogdb/build')))
+//app.use(exp.static(path.join(__dirname,'../client/blogdb/build')))
 //join fe and be
 //connect to mongodb server
 //mc.connect('mongodb://localhost:27017')
@@ -35,9 +35,9 @@ app.use('/user-api',userapp)
 app.use('/admin-api',adminapp)
 app.use('/author-api',authorapp)
 //deals with page refresh
-app.use((req,res,next)=>{
-    res.sendFile(path.join(__dirname,'../client/blogdb/build/index.html'))
-})
+//app.use((req,res,next)=>{
+//    res.sendFile(path.join(__dirname,'../client/blogdb/build/index.html'))
+//})
 //assign port no
 app.use((err,req,res,next)=>{
     res.send({message:'error',payload:err})
